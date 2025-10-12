@@ -180,6 +180,7 @@
             z-index: 10;
         }
 
+
         .status-item {
             display: flex;
             align-items: center;
@@ -988,6 +989,18 @@ Uptime: ${Math.floor(performance.now() / 1000 / 60)} min`;
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⡿⠛⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢻⡇⠀⠀⢀⣼⠗⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⠃⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠁⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠒⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+
+
+
+
+           XXX        XX        XXXXXX
+          XX XX       XX          XX  
+         XX   XX      XX          XX  
+        XX     XX     XX          XX  
+       XXXXXXXXXXX    XX          XX  
+      XX         XX   XX          XX  
+     XX           XX  XX          XX  
+    XX             XX XXXXXXXXX XXXXXX
 `.trim();
 
                                 const lines = globeArt.split('\n').filter(l => l.trim() !== '');
@@ -1681,7 +1694,7 @@ Uptime: ${Math.floor(performance.now() / 1000 / 60)} min`;
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            // Neon / suyuq shisha overlay
+
             const overlay = document.createElement("div");
             overlay.id = "win11-lock-overlay";
             Object.assign(overlay.style, {
@@ -1690,16 +1703,19 @@ Uptime: ${Math.floor(performance.now() / 1000 / 60)} min`;
                 left: 0,
                 width: "100%",
                 height: "100%",
-                background: "rgba(0,0,0,0.85)", // ozgina shaffof qora
-                backdropFilter: "blur(12 px) saturate(180%)",
-                WebkitBackdropFilter: "blur(12px) saturate(180%)",
+                backgroundImage: "linear-gradient(rgba(10, 10, 25, 0.78), rgba(10, 10, 25, 0.78)), url('assets/background.jpg')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                backdropFilter: "blur(64px) saturate(150%)",
+                WebkitBackdropFilter: "blur(64px) saturate(150%)",
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
                 justifyContent: "center",
-                fontFamily: "'Orbitron', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
-                color: "#00fff7",
-                textShadow: "0 0 12px #00fff7, 0 0 24px #00f0ff77, 0 0 48px #0ff",
+                fontFamily: "'Segoe UI Variable Display', 'Segoe UI', 'Orbitron', Tahoma, Geneva, Verdana, sans-serif",
+                color: "#00e0ff",
+                textShadow: "0 0 10px rgba(0, 224, 255, 0.7), 0 0 20px rgba(0, 200, 255, 0.4), 0 0 40px rgba(0, 180, 255, 0.2)",
                 fontSize: "2.5rem",
                 fontWeight: "300",
                 zIndex: 99999,
@@ -1708,34 +1724,60 @@ Uptime: ${Math.floor(performance.now() / 1000 / 60)} min`;
                 boxSizing: "border-box"
             });
 
+
             // Soat elementi
             const timeElement = document.createElement("div");
             timeElement.id = "lock-screen-time";
             Object.assign(timeElement.style, {
                 fontSize: "5rem",
                 fontWeight: "200",
-                letterSpacing: "4px",
-                marginBottom: "60px",
-                textShadow: "0 0 8px #00fff7, 0 0 16px #00f0ff77"
+                fontFamily: "'Orbitron', 'Segoe UI', sans-serif",
+                letterSpacing: "8px",
+                marginBottom: "40px",
+                color: "#ffffff",
+                textShadow: "0 0 12px rgba(0, 224, 255, 0.6), 0 0 24px rgba(0, 200, 255, 0.3)",
+                lineHeight: "1.1",
+                textRendering: "optimizeLegibility"
             });
 
             // GO tugmasi
             const btn = document.createElement("button");
             btn.innerText = "GO";
             Object.assign(btn.style, {
-                padding: "14px 50px",
+                padding: "10px 50px",
                 borderRadius: "12px",
-                background: "rgba(0,255,255,0.08)",
-                border: "1px solid rgba(0,255,255,0.4)",
-                color: "#00fff7",
+                background: "rgba(255, 255, 255, 0.08)",
+                border: "1px solid rgba(255, 255, 255, 0.2)",
+                color: "#00e0ff",
                 cursor: "pointer",
                 fontSize: "1.2rem",
                 fontWeight: "600",
-                backdropFilter: "blur(18px) saturate(200%)",
-                WebkitBackdropFilter: "blur(18px) saturate(200%)",
-                boxShadow: "0 0 20px #00fff7aa, 0 0 40px #00f0ff55 inset",
-                transition: "0.2s all",
-                textShadow: "0 0 6px #00fff7"
+                fontFamily: "'Segoe UI', 'Orbitron', sans-serif",
+                backdropFilter: "blur(64px) saturate(150%)",
+                WebkitBackdropFilter: "blur(64px) saturate(150%)",
+                boxShadow: "0 0 0 1px rgba(255, 255, 255, 0.1), 0 4px 12px rgba(0, 0, 0, 0.2)",
+                transition: "all 0.25s ease",
+                textShadow: "0 0 8px rgba(0, 224, 255, 0.5)",
+                marginTop: "20%",
+            });
+
+
+            btn.addEventListener("mouseenter", () => {
+                Object.assign(btn.style, {
+                    background: "rgba(255, 255, 255, 0.12)",
+                    border: "1px solid rgba(255, 255, 255, 0.3)",
+                    boxShadow: "0 0 0 1px rgba(255, 255, 255, 0.15), 0 6px 16px rgba(0, 0, 0, 0.25)",
+                    textShadow: "0 0 10px rgba(0, 224, 255, 0.7)"
+                });
+            });
+
+            btn.addEventListener("mouseleave", () => {
+                Object.assign(btn.style, {
+                    background: "rgba(255, 255, 255, 0.08)",
+                    border: "1px solid rgba(255, 255, 255, 0.2)",
+                    boxShadow: "0 0 0 1px rgba(255, 255, 255, 0.1), 0 4px 12px rgba(0, 0, 0, 0.2)",
+                    textShadow: "0 0 8px rgba(0, 224, 255, 0.5)"
+                });
             });
 
             btn.onmouseenter = () => {
